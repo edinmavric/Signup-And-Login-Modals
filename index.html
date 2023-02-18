@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="app.css" />
+    <script src="app.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="page">
+
+      <div class="buttons-div">
+      <button class="open-modal">Sign up</button>
+      <span>or already have an account?</span>
+      <button class="open-login-modal">Log in</button>
+    </div>
+
+      <div class="login-form-container">
+        <div class="form-div">
+          <form id="form2" name="myLoginForm">
+            <div class="input-info">
+              <h1>Login</h1>
+              <a>Fill all information before loging in</a>
+            </div>
+            <div class="fifthInput">
+            <input type="email" id="lename" placeholder="Email:" />
+              <p id="login-email-error"></p>
+          </div>
+          <div class="sixthInput">
+            <input type="password" id="lpname" placeholder="Password:" />
+            <p id="login-pass-error"></p>
+          </div>
+          <div class="seventhInput">
+            <input
+              type="password"
+              id="lcpname"
+              placeholder="Confirm Password:"
+            />
+            <p id="login-cpass-error"></p>
+          </div>
+            <button type="submit" id="btnLogin" value="Submit">Submit</button>
+            <button class="close-login-modal">x</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="form-container">
+        <div class="form-div">
+          <form name="myForm" id="form1">
+            <div class="input-info">
+              <h1>Sign up</h1>
+              <a>Fill all information before signing up</a>
+            </div>
+
+            <input
+              type="text"
+              id="nameSurName"
+              class="duzina"
+              value=""
+              placeholder="Name and Surname: "
+            />
+            <p id="name-error"></p>
+            <div class="email-div">
+              <div class="firstInput">
+                <input type="email" id="ename" value="" placeholder="Email:" />
+                <p id="email-error"></p>
+              </div>
+              <div class="secondInput">
+                <input
+                  type="email"
+                  id="cename"
+                  value=""
+                  placeholder="Confirm Email:"
+                />
+                <p id="cemail-error"></p>
+              </div>
+            </div>
+            <div class="pass-div">
+              <div class="thirdInput">
+                <input
+                  type="password"
+                  id="pname"
+                  value=""
+                  placeholder="Password:"
+                />
+                <p id="pass-error"></p>
+              </div>
+              <div class="fourthInput">
+                <input
+                  type="password"
+                  id="cpname"
+                  value=""
+                  placeholder="Confirm Password:"
+                />
+                <p id="cpass-error"></p>
+              </div>
+            </div>
+            <button type="submit" id="btn" value="Submit">Submit</button>
+            <button class="close-modal">x</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
