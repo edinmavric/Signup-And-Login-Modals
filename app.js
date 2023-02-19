@@ -126,9 +126,11 @@ const validateForm = (event) => {
 
 openBtn.addEventListener("click", () => {
   modal.style.display = "inline";
+  buttons.style.display = "none";
 });
 closeBtn.addEventListener("click", () => {
   modal.style.display = "none";
+  buttons.style.display = "inline";
 });
 openLoginBtn.addEventListener("click", () => {
   loginModal.style.display = "inline";
@@ -148,6 +150,8 @@ formBtn.addEventListener("click", () => {
     confirmPassword.value === password.value
   ) {
     alert("Succesful Sign Up, Have fun!");
+    modal.style.display = "none";
+    buttons.style.display = "inline";
   }
 });
 
@@ -158,5 +162,7 @@ formLoginBtn.addEventListener("click", () => {
     loginConfirmPassword.value === loginPassword.value
   ) {
     alert("Succesful Log In, Welcome back!");
+    loginModal.style.display = "none";
+    buttons.style.display = "inline";
   }
 });
