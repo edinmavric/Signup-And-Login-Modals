@@ -2,6 +2,7 @@ let form = document.getElementById("form1");
 let loginForm = document.getElementById("form2");
 let formBtn = document.getElementById("btn");
 let formLoginBtn = document.getElementById("btnLogin");
+let userInputs = document.querySelectorAll("input");
 
 let nameSurname = document.getElementById("nameSurName");
 let password = document.getElementById("pname");
@@ -30,9 +31,34 @@ let closeLoginBtn = document.querySelector(".close-login-modal");
 let loginModal = document.querySelector(".login-form-container");
 
 let buttons = document.querySelector(".buttons-div");
+// let backdrop = document.getElementById("backdrop");
+// let body = document.body;
 
 form.addEventListener("submit", (event) => validateForm(event));
 loginForm.addEventListener("submit", (event) => validateLoginForm(event));
+
+const clearMovieInputs = () => {
+  for (const usrInput of userInputs) {
+    usrInput.value = "";
+  }
+  nameSurname.style.border = "2px solid grey";
+  email.style.border = "2px solid grey";
+  confirmEmail.style.border = "2px solid grey";
+  password.style.border = "2px solid grey";
+  confirmPassword.style.border = "2px solid grey";
+  loginEmail.style.border = "2px solid grey";
+  loginPassword.style.border = "2px solid grey";
+  loginConfirmPassword.style.border = "2px solid grey";
+
+  loginEmailError.innerHTML = "";
+  loginPasswordError.innerHTML = "";
+  loginConfirmPasswordError.innerHTML = "";
+  nameError.innerHTML = "";
+  emailError.innerHTML = "";
+  confirmEmailError.innerHTML = "";
+  passError.innerHTML = "";
+  confirmPassError.innerHTML = "";
+};
 
 const validateLoginForm = (event) => {
   event.preventDefault();
@@ -127,19 +153,37 @@ const validateForm = (event) => {
 openBtn.addEventListener("click", () => {
   modal.style.display = "inline";
   buttons.style.display = "none";
+  clearMovieInputs();
 });
 closeBtn.addEventListener("click", () => {
   modal.style.display = "none";
   buttons.style.display = "inline";
+  clearMovieInputs();
 });
 openLoginBtn.addEventListener("click", () => {
   loginModal.style.display = "inline";
   buttons.style.display = "none";
+  clearMovieInputs();
 });
 closeLoginBtn.addEventListener("click", () => {
   loginModal.style.display = "none";
   buttons.style.display = "inline";
+  clearMovieInputs();
 });
+
+// body.addEventListener('click', (event) => {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//     buttons.style.display = "inline";
+//   }
+// });
+
+// body.addEventListener('click', (event) => {
+//   if (event.target == modal) {
+//     loginModal.style.display = "none";
+//     buttons.style.display = "inline";
+//   }
+// });
 
 formBtn.addEventListener("click", () => {
   if (
@@ -149,9 +193,9 @@ formBtn.addEventListener("click", () => {
     password.value.length > 7 &&
     confirmPassword.value === password.value
   ) {
-    alert("Succesful Sign Up, Have fun!");
     modal.style.display = "none";
     buttons.style.display = "inline";
+    alert("Succesful Sign Up, Have fun!");
   }
 });
 
@@ -161,8 +205,24 @@ formLoginBtn.addEventListener("click", () => {
     loginPassword.value.length > 7 &&
     loginConfirmPassword.value === loginPassword.value
   ) {
-    alert("Succesful Log In, Welcome back!");
     loginModal.style.display = "none";
     buttons.style.display = "inline";
+    alert("Succesful Log In, Welcome back!");
   }
 });
+
+// window.addEventListener("click", (event) => {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//     buttons.style.display = "inline";
+//     console.log('Background is clicked');
+//   }
+// });
+
+// window.addEventListener("click", (event) => {
+//   if (event.target == loginModal) {
+//     loginModal.style.display = "none";
+//     buttons.style.display = "inline";
+//     console.log('Background is clicked');
+//   }
+// });

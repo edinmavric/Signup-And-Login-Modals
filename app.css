@@ -30,7 +30,7 @@ input {
   margin: 20px;
 }
 
-#btn {
+#btn, #btnLogin {
   margin-top: 8px;
   padding: 14px 44px;
   background-color: rgba(103, 103, 255, 0.811);
@@ -39,7 +39,7 @@ input {
   color: rgb(154, 230, 255);
   cursor: pointer;
 }
-#btn:hover {
+#btn:hover, #btnLogin:hover {
   transition: 0.5s;
   background-color: rgb(55, 205, 255);
   color: rgba(56, 56, 250, 0.897);
