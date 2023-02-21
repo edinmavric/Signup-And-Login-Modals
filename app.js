@@ -34,10 +34,10 @@ let buttons = document.querySelector(".buttons-div");
 // let backdrop = document.getElementById("backdrop");
 // let body = document.body;
 
-form.addEventListener("submit", (event) => validateForm(event));
-loginForm.addEventListener("submit", (event) => validateLoginForm(event));
+form.addEventListener("submit", event => validateForm(event));
+loginForm.addEventListener("submit", event => validateLoginForm(event));
 
-const clearMovieInputs = () => {
+const clearInputs = () => {
   for (const usrInput of userInputs) {
     usrInput.value = "";
   }
@@ -60,7 +60,7 @@ const clearMovieInputs = () => {
   confirmPassError.innerHTML = "";
 };
 
-const validateLoginForm = (event) => {
+const validateLoginForm = event => {
   event.preventDefault();
 
   if (loginEmail.value === "" && loginEmail.value.length < 9) {
@@ -94,7 +94,7 @@ const validateLoginForm = (event) => {
   }
 };
 
-const validateForm = (event) => {
+const validateForm = event => {
   event.preventDefault();
 
   if (nameSurname.value === "") {
@@ -153,37 +153,23 @@ const validateForm = (event) => {
 openBtn.addEventListener("click", () => {
   modal.style.display = "inline";
   buttons.style.display = "none";
-  clearMovieInputs();
+  clearInputs();
 });
 closeBtn.addEventListener("click", () => {
   modal.style.display = "none";
   buttons.style.display = "inline";
-  clearMovieInputs();
+  clearInputs();
 });
 openLoginBtn.addEventListener("click", () => {
   loginModal.style.display = "inline";
   buttons.style.display = "none";
-  clearMovieInputs();
+  clearInputs();
 });
 closeLoginBtn.addEventListener("click", () => {
   loginModal.style.display = "none";
   buttons.style.display = "inline";
-  clearMovieInputs();
+  clearInputs();
 });
-
-// body.addEventListener('click', (event) => {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//     buttons.style.display = "inline";
-//   }
-// });
-
-// body.addEventListener('click', (event) => {
-//   if (event.target == modal) {
-//     loginModal.style.display = "none";
-//     buttons.style.display = "inline";
-//   }
-// });
 
 formBtn.addEventListener("click", () => {
   if (
@@ -211,6 +197,26 @@ formLoginBtn.addEventListener("click", () => {
   }
 });
 
+// window.onclick = function(event) {
+//   if (!event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// }
+
+// body.addEventListener('click', (event) => {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//     buttons.style.display = "inline";
+//   }
+// });
+
+// body.addEventListener('click', (event) => {
+//   if (event.target == modal) {
+//     loginModal.style.display = "none";
+//     buttons.style.display = "inline";
+//   }
+// });
+
 // window.addEventListener("click", (event) => {
 //   if (event.target == modal) {
 //     modal.style.display = "none";
@@ -226,3 +232,16 @@ formLoginBtn.addEventListener("click", () => {
 //     console.log('Background is clicked');
 //   }
 // });
+// document.addEventListener(
+//   "click",
+//   function (event) {
+//     if (
+//       !event.target == modal
+//     ) {
+//       closeModal();
+//     }
+//   });
+
+// function closeModal() {
+//   modal.style.display = "none";
+// }
