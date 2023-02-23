@@ -30,7 +30,8 @@ input {
   margin: 20px;
 }
 
-#btn, #btnLogin {
+#btn,
+#btnLogin {
   margin-top: 8px;
   padding: 14px 44px;
   background-color: rgba(103, 103, 255, 0.811);
@@ -39,7 +40,8 @@ input {
   color: rgb(154, 230, 255);
   cursor: pointer;
 }
-#btn:hover, #btnLogin:hover {
+#btn:hover,
+#btnLogin:hover {
   transition: 0.5s;
   background-color: rgb(55, 205, 255);
   color: rgba(56, 56, 250, 0.897);
@@ -92,12 +94,12 @@ p {
 .form-container {
   display: none;
   z-index: 2;
-  position: fixed;
+  animation: myAnim 1s ease 0s 1 normal forwards;
 }
 .login-form-container {
   display: none;
   z-index: 2;
-  position: fixed;
+  animation: myAnim 1s ease 0s 1 normal forwards;
 }
 .close-modal {
   position: absolute;
@@ -155,4 +157,18 @@ p {
 }
 span {
   margin: 14px;
+}
+
+@keyframes myAnim {
+  0% {
+    transform: scale(0.1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }

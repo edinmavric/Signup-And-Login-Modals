@@ -34,8 +34,8 @@ let buttons = document.querySelector(".buttons-div");
 // let backdrop = document.getElementById("backdrop");
 // let body = document.body;
 
-form.addEventListener("submit", event => validateForm(event));
-loginForm.addEventListener("submit", event => validateLoginForm(event));
+form.addEventListener("submit", (event) => validateForm(event));
+loginForm.addEventListener("submit", (event) => validateLoginForm(event));
 
 const clearInputs = () => {
   for (const usrInput of userInputs) {
@@ -60,7 +60,7 @@ const clearInputs = () => {
   confirmPassError.innerHTML = "";
 };
 
-const validateLoginForm = event => {
+const validateLoginForm = (event) => {
   event.preventDefault();
 
   if (loginEmail.value === "" && loginEmail.value.length < 9) {
@@ -94,7 +94,7 @@ const validateLoginForm = event => {
   }
 };
 
-const validateForm = event => {
+const validateForm = (event) => {
   event.preventDefault();
 
   if (nameSurname.value === "") {
